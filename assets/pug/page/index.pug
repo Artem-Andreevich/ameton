@@ -1,0 +1,67 @@
+extends ../layout/head.pug 
+block content
+    main.page.page-support
+        section.container
+            .support-banner
+                .support-banner__content
+                    .support-banner__hgroup
+                        h1.support-banner__title Поддержка здесь
+                        p.support-banner__descr Мы любим общаться и рады всем отзывам, вопросам и предложениям. Выберите удобный способ
+                    .support-banner__links 
+                        a.btn.btn--accent(href="#")
+                            +svg("message-icon", 14, 13)(class="icon-fill")
+                            span Онлайн-чат
+                        a.btn.btn--accent(href="#")
+                            +svg("phone-icon", 14, 14)(class="icon-fill")
+                            span Позвонить
+                        a.btn.btn--accent(href="#")
+                            +svg("mail-icon", 14, 11)(class="icon-fill")
+                            span Почта
+                        a.btn.btn--accent(href="#")
+                            +svg("star-icon", 16, 15)(class="icon-fill")
+                            span Отзыв о сайте
+
+        article.container-small
+            .subscribe 
+                .subscribe__hgroup 
+                    span.subscribe__label Социальные сети и сообщество
+                    h3.subscribe__title Присоединяйтесь
+                .subscribe__links
+                    a.social-link(href="#")
+                        +svg("vk-icon", 26, 14)(class="icon-fill")
+                    a.social-link(href="#")
+                        +svg("inst-icon", 20, 20)(class="icon-fill")
+                    a.social-link(href="#")
+                        +svg("tiktok-icon", 20, 23)(class="icon-fill")
+                    a.social-link(href="#")
+                        +svg("twitter-icon", 24, 19)(class="icon-fill")
+                    a.social-link(href="#")
+                        +svg("dzen-icon", 36, 36)(class="icon-fill")
+                    a.social-link(href="#")
+                        +svg("facebook-icon", 11, 24)(class="icon-fill")
+        section.container
+            .faq
+                h2.page__title.faq__title Часто задаваемые вопросы
+        section.container-small
+            .guide
+                h2.page__title.guide__title Справка
+                ul.guide__list
+                    li
+                        a.guide-item(href="#") 
+                            span.guide-item__hgroup
+                                h4.guide-item__title.page__heading Бережная сборка
+                    li
+                        a.guide-item(href="#") 
+                            span.guide-item__hgroup
+                                h4.guide-item__title.page__heading Способы доставки и самовывоза
+                                p.guide-item__descr Это карта лояльности с вашим номером покупат Это карта лояльности с вашим номером покупат
+                    li 
+                        a.guide-item(href="#") 
+                            span.guide-item__hgroup
+                                h4.guide-item__title.page__heading Минимальная сумма заказа
+                    li 
+                        a.guide-item(href="#") 
+                            span.guide-item__hgroup
+                                h4.guide-item__title.page__heading Лёгкий возврат
+                                p.guide-item__descr Это карта лояльности с вашим номером покупат Это карта лояльности с вашим номером покупат
+

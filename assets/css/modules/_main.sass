@@ -1,0 +1,422 @@
+@import "_fonts.sass"
+@import "_root.sass"
+@import "_variables.sass"
+@import "_keyframes.sass"
+@import "_reset.sass"
+
+/* APP */
+.wrapper 
+	-webkit-box-orient: vertical
+	-webkit-box-direction: normal
+	display: flex
+	flex-direction: column
+	min-height: 100%
+	margin: 0 auto
+
+.page 
+
+	margin: calc( var(--page-gap) / 2 ) 0 var(--page-gap)
+
+	&__title 
+		font-size: var(--fs-40-24)
+		font-family: $semi
+		line-height: 120%
+
+	&__subtitle 
+		font-size: var(--fs-24-18)
+		font-family: $semi
+		line-height: 120%
+	
+	&__heading 
+		font-size: var(--fs-20-16)
+		font-family: $semi
+		line-height: 120%
+	
+	&__checkbox 
+		position: relative
+		display: flex
+		align-items: center
+		cursor: pointer
+
+		&:hover 
+			svg rect
+				fill: var(--main-color-hover)
+			svg polyline
+				stroke: var(--main-color-hover)
+		
+		input 
+			position: absolute
+			left: 10px
+			bottom: 0
+			width: 1px !important
+			height: 1px !important
+			border: none !important
+			box-shadow: none !important
+
+			&:checked 
+				~ svg rect 
+					fill: var(--main-color)
+				~ svg polyline 
+					stroke: #fff
+			
+		svg 
+			margin-right: 10px 
+			flex-shrink: 0
+		svg rect 
+			fill: var(--second-light-color)
+		svg polyline 
+			stroke: var(--second-light-color)
+
+	&__radio 
+		display: flex
+		align-items: center
+		cursor: pointer
+		&:hover 
+			svg rect:last-child 
+				fill: var(--main-color)
+		
+		input 
+			width: 1px
+			&:checked 
+				~ svg rect:first-child 
+					fill: var(--main-color)
+		svg  
+			margin-right: 10px 
+		svg rect  
+			fill: var(--second-light-color) 
+	
+	&__content 
+		display: flex
+		flex-direction: column
+		gap: 20px
+
+		img 
+			width: 100%
+			max-height: 600px
+			border-radius: 10px
+		
+		h1 
+			font-size: 40px
+			font-family: $bold
+			color: #ccc
+		
+		h2 
+			font-size: var(--fs-24-lg-16)
+			font-family: $bold
+		
+		h3 
+			font-size: var(--fs-18-14)
+			font-family: $bold
+		
+		a 
+			display: block
+			width: fit-content
+		
+		q  
+			font-size: var(--fs-18-16)
+		
+		p 
+			font-size: var(--fs-16-14)
+		
+		span 
+			font-size: 12px 
+			color: var(--accent-color)
+		
+		ul 
+			display: flex
+			flex-direction: column
+			gap: 15px
+			padding-left: 15px
+			list-style: none
+
+			li 
+				padding-left: 15px
+				&::marker 
+					content: '—'
+					color: var(--main-color)
+
+		ol 
+			display: flex
+			flex-direction: column
+			gap: 15px
+			list-style-type: none
+			counter-reset: num
+
+			li 
+				counter-increment: num
+				display: flex
+				gap: 10px
+				&:before 
+					content: counter(num)
+					color: var(--main-color)
+				
+				&:nth-child(-n+9)::before 
+					content: "0" counter(num)
+		
+		dl 
+			div 
+				display: flex
+				justify-content: space-between
+				gap: 10px
+				padding: 15px 0
+				
+				font-size: var(--fs-14-12)
+				border-bottom: 1px solid var(--second-color)
+
+				dt 
+					font-family: $regular
+				dd 
+					font-family: $bold 
+			
+		table 
+			display: block
+			overflow-x: auto
+
+			thead tr 
+				color: #fff
+				font-family: $bold
+				background: #000
+			
+			tbody tr
+				&:nth-child(even)  
+					background: var(--second-light-color) 
+				&:hover  
+					background: var(--accent-color) 
+					color: #fff
+			
+			td 
+				padding: 20px
+				font-size: var(--fs-16-sm-12)
+				font-weight: normal
+				&:first-child 
+					border-radius: 16px 0 0 16px
+				&:last-child 
+					border-radius: 0 16px 16px 0
+
+.container
+	width: 100%
+	max-width: calc( var(--container-width) + ( var(--container-padding) * 2 ))
+	margin: 0 auto
+	padding: 0 var(--container-padding)
+
+.container-small
+	width: 100%
+	max-width: calc( var(--container-small-width) + ( var(--container-padding) * 2 ))
+	margin: 0 auto
+	padding: 0 var(--container-padding)
+
+.text 
+	&-preview 
+		display: -webkit-box
+		-webkit-box-orient: vertical
+		text-overflow: ellipsis
+		overflow: hidden
+		&-open  
+			cursor: pointer 
+		&.open  
+			-webkit-line-clamp: inherit 
+	&-line-1  
+		-webkit-line-clamp: 1
+	&-line-2  
+		-webkit-line-clamp: 2
+	&-line-3  
+		-webkit-line-clamp: 3
+	&--is-clamped  
+		cursor: help
+
+
+
+/* SHARED */
+
+.icon 
+	stroke: currentColor
+	&-fill  
+		fill: currentColor 
+	&-rotate-90  
+		transform: rotate(90deg)
+	&-rotate-180  
+		transform: rotate(180deg)
+	&-rotate-270  
+		transform: rotate(270deg)
+
+.btn
+	display: flex
+	align-items: center
+	justify-content: center
+	gap: 8px
+	width: 100%
+	height: var(--button-height)
+	padding: 8px
+	font-family: $semi
+	font-size: var(--fs-15-12)
+	line-height: 120%
+	border-radius: var(--border-raduis-12)
+	transition: $trans
+
+	&--accent
+		width: 160px
+		color: var(--text-color)
+		background: #fff
+
+	@media(hover : hover)
+		&:hover
+			color: var(--accent-color-hover)
+
+
+/* ENTITIES */
+
+.social-link
+	display: flex
+	align-items: center
+	justify-content: center
+	width: var(--size-56-40)
+	height: var(--size-56-40)
+	padding: 8px
+	color: var(--main-color)
+	background: var(--second-color)
+	border-radius: var(--border-raduis-12)
+	transition: $trans
+	@media(hover : hover)
+		&:hover
+			color: var(--accent-color-hover)
+			background: var(--second-light-color)
+			box-shadow: var(--shadow-small)
+
+.guide-item
+	display: flex
+	align-items: center
+	justify-content: space-between
+	gap: 16px
+	padding: 20px 24px
+	background: #fff
+	border-radius: var(--border-raduis-16)
+	box-shadow: var(--shadow-small)
+	transition: $trans
+	&__hgroup
+		max-width: 500px
+	&__descr
+		margin-top: 4px
+		color: var(--text-color-second)
+		font-size: 13px
+		line-height: 140%
+		display: -webkit-box
+		-webkit-box-orient: vertical
+		text-overflow: ellipsis
+		-webkit-line-clamp: 2
+		overflow: hidden
+	&::after
+		content: ""
+		display: block
+		width: 6px
+		height: 12px
+		flex-shrink: 0
+		background: url(../images/arr.svg) no-repeat
+		background-size: contain
+	@media(hover : hover)
+		&:hover
+			box-shadow: 0px 0px 0px 2px var(--accent-color-hover)
+
+
+/* FEATURES */
+
+
+/* WIDGETS */
+
+.support-banner
+	position: relative
+	padding: 40px 20px 54px 20px
+	background: var(--accent-color)
+	border-radius: var(--border-raduis-40)
+	overflow: hidden
+	z-index: 1
+	&__content
+		display: flex
+		align-items: center
+		flex-direction: column
+		gap: 40px
+	&__hgroup
+		display: flex
+		flex-direction: column
+		gap: 4px
+		max-width: 535px
+	&__title
+		color: #fff
+		font-family: $bold
+		font-size: var(--fs-60-30)
+		line-height: 120%
+		text-align: center
+	&__descr
+		color: #fff
+		font-size: var(--fs-17-14)
+		line-height: 140%
+		text-align: center
+	&__links
+		display: grid
+		grid-template-columns: repeat(4, 1fr)
+		gap: 8px
+	&::before
+		content: ''
+		position: absolute
+		top: 37px
+		left: 0
+		display: block
+		width: 263px
+		height: 218px
+		background: url(../images/support-bg-l.svg) no-repeat
+		background-size: contain
+		z-index: -1
+	&::after
+		content: ''
+		position: absolute
+		bottom: 0
+		right: 0
+		display: block
+		width: 278px
+		height: 226px
+		background: url(../images/support-bg-r.svg) no-repeat
+		background-size: contain
+		background-position: bottom
+		z-index: -1
+
+.subscribe
+	display: flex
+	align-items: center
+	justify-content: space-between
+	gap: 16px
+	padding: 42px 40px
+	border-radius: var(--border-raduis-40)
+	box-shadow: var(--shadow-large)
+
+	&__hgroup
+		display: flex
+		flex-direction: column
+		gap: 16px
+	&__title
+		font-family: $semi
+		font-size: var(--fs-40-24)
+		line-height: 120%
+	&__label
+		font-family: $semi
+		font-size: var(--fs-15-12)
+		line-height: 120%
+	&__links
+		display: grid
+		grid-template-columns: repeat(6, 1fr)
+		align-items: center
+		gap: 14px
+
+.guide
+	&__title
+		text-align: center
+	&__list
+		display: flex
+		flex-direction: column
+		gap: 12px
+		margin-top: calc( (var(--page-gap) / 2) - 8px )
+
+/* PAGES */
+
+.page-support
+	display: flex
+	flex-direction: column
+	gap: var(--page-gap)
