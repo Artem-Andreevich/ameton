@@ -13,14 +13,39 @@
         width: 180px
     .subscribe__hgroup
         gap: 4px
+    .faq-item
+        height: 140px
+        align-items: center
+    .faq-item--with-icon::after
+        width: 76px
+    .article__title--mark::after
+        width: 13px
+        height: 14px
 @media (max-width: 767px) and (min-width: 0px) 
     .subscribe
         flex-direction: column
         justify-content: center
+    .swiper-button
+        display: none
+    .faq__slider
+        margin: calc(var(--page-gap)/2 - 28px) -10px -20px
+    .swiper .swiper-pagination
+        display: block
 
 @media (max-width: 576px) and (min-width: 0px) 
+    .support-banner, .subscribe
+        padding: 30px 20px
     .support-banner::before, .support-banner::after
         width: 150px
     .subscribe__links
         grid-template-columns: repeat(3, 1fr)
         gap: 8px
+    .faq__slider .swiper-slide
+        padding: 20px 10px 10px
+    .btn
+        gap: 4px
+        padding: 6px
+        &--accent
+            width: 120px
+        &--main
+            width: 160px

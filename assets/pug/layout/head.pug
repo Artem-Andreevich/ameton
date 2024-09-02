@@ -6,11 +6,12 @@ html(lang="ru")
         meta(name='viewport', content='width=device-width,initial-scale=1,shrink-to-fit=no')
         link(rel='preconnect', href='https://fonts.googleapis.com')
         link(rel='preconnect', href='https://fonts.gstatic.com', crossorigin)
-        //- link(href='css/libs/bootstrap.min.css', rel='stylesheet')
+        link(rel="stylesheet" href='css/libs/swiper-bundle.min.css')
         link(href='css/styles.min.css', rel='stylesheet')
-        link(rel="icon" href="fic.svg" type="image/svg+xml")
+        link(rel="icon" href="favicon.ico" type="image/svg+xml")
         title #{title}
-        script(src='js/main.js')
+        script(src='js/swiper-bundle.min.js' defer)
+        script(src='js/main.js' defer)
     body
         include svg.pug
         .wrapper 
